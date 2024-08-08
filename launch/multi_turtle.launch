@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="turtle1_required" default="true"/>
+    
+
+    <group if="$(arg turtle1_required)">
+        
+        <include file="$(find tutorial_pkg)/launch/turtlesim_drive.launch">
+
+            <arg name="turtle_name" value="turtle1"/>
+            <arg name="controller_name" value="controller1"/>
+            <arg name="turtle_topic_name" value="/turtle1/cmd_vel"/>
+                
+        </include>    
+    
+    </group>
+    
+
+    <include file="$(find tutorial_pkg)/launch/turtlesim_drive.launch">
+
+        <arg name="turtle_name" value="turtle2"/>
+        <arg name="controller_name" value="controller2"/>
+        <arg name="turtle_topic_name" value="/turtle2/cmd_vel"/>
+        
+    </include>
+
+</launch>

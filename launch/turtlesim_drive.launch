@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="turtle_name" default="turtle_default"/>
+    <arg name="controller_name" default="controller_default"/>
+    <arg name="turtle_topic_name" default="/cmd_vel"/>
+    
+    
+    
+
+    <node pkg="turtlesim" type="turtlesim_node" name="$(arg turtle_name)">
+
+        <remap from="/turtle1/cmd_vel" to="$(arg turtle_topic_name)"/>
+        
+    </node>
+
+    <node pkg="ros-playground" type="teleop_gui.py" name="$(arg controller_name)">
+
+        <remap from="/turtle1/cmd_vel" to="$(arg turtle_topic_name)"/>
+
+    </node>
+
+</launch>

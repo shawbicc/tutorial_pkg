@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/vboxuser/tutorial_ws/src/tutorial_pkg/build/devel/setup.sh
